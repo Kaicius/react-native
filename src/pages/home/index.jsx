@@ -4,17 +4,17 @@ import { StyleSheet, Text, View, Pressable, TouchableOpacity, Image } from 'reac
 export default function Home({navigation}) {
   return (
     <View style={styles.container}>
-      <Image source={require("../../../assets/icon.png")} style={{width: 64, height: 64}}/>
+      <Image source={require("../../assets/icon.png")} style={{width: 64, height: 64}}/>
       <Text style={styles.textPrimary}>Site</Text>
       <View style={styles.geral}>
-        <Pressable onPress={() => console.log("Apertado 1")} style={styles.btnPrimary}>
-          <Text style={{color: "white"}}>
-          Cadastro
-          </Text>
-        </Pressable>
+        <TouchableOpacity  onPress={() => navigation.navigate("Register")} style={styles.btnPrimary}>
+            <Text style={{color: "white", fontSize: 15}}>
+            Cadastro
+            </Text>
+          </TouchableOpacity>
         <TouchableOpacity  onPress={() => navigation.navigate("Login")} style={styles.btnSecondary}>
           <Text style={{color: "white", fontSize: 15}}>
-          Login
+            Login
           </Text>
         </TouchableOpacity>
       </View>
