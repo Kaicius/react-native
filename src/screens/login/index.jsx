@@ -17,7 +17,7 @@ export default function Login({navigation}) {
       setCarregando(true)
   
       const resposta = await fetch(
-        "http://#:3000/user/login",
+        "http://10.135.219.27:3000/user/login",
         {
           method: 'POST',
           headers: {

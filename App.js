@@ -1,11 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './src/pages/home';
-import Login from './src/pages/login';
-import { Register } from './src/pages/register';
-import { Forgot } from './src/pages/forgot';
-import { Logado } from './src/pages/login/logado.jsx';
+import { Home, Logado, Login, Register, Forgot } from './src/screens';
 
 const Stack = createNativeStackNavigator();
 

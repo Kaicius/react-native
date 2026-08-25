@@ -1,0 +1,5 @@
+export { default as Register } from './register'
+export { default as Login } from './login'
+export { default as Home } from './home'
+export { default as Forgot } from './forgot'
+export { default as Logado } from './login'

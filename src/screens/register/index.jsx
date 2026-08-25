@@ -1,14 +1,15 @@
 import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from "react-native"
 
-export const Forgot = () => {
+const Register = () => {
     return (
         <View style={styles.container}>
-            <Text style={{fontSize: 30}}>Esqueci a senha</Text>
+            <Text style={{fontSize: 30}}>Cadastro</Text>
             <View style={styles.geral}>
                 <TextInput placeholder="Email:" keyboardType="Email-address" style={styles.inputs}></TextInput>
+                <TextInput placeholder="Senha:" style={styles.inputs}></TextInput>
             </View>
             <TouchableOpacity style={styles.butao}>
-                <Text style={{color: "white", alignSelf: "center", fontSize: 15}}>Confirmar</Text>
+                <Text style={{color: "white", alignSelf: "center", fontSize: 15}}>Cadastrar</Text>
             </TouchableOpacity>
         </View>
     )
@@ -43,3 +44,5 @@ const styles = StyleSheet.create({
         borderRadius: 12
       },
 })
+
+export default Register
