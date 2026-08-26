@@ -1,11 +1,14 @@
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image, Alert } from "react-native"
+import { Text, View, TouchableOpacity, TextInput, Image, Alert } from "react-native"
 import { useEffect, useState } from "react"
+import { stylesLogin } from "./style"
+import { useNavigation } from "@react-navigation/native"
 
 
-export default function Login({navigation}) {
+export default function Login() {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [carregando, setCarregando] = useState(false)
+  const navigation = useNavigation()
 
   async function fazerLogin() {
     if (!email || !senha) {
@@ -17,7 +20,7 @@ export default function Login({navigation}) {
       setCarregando(true)
   
       const resposta = await fetch(
-        "http://10.135.219.27:3000/user/login",
+        "http://10.135.224.15:3000/user/login",
         {
           method: 'POST',
           headers: {
@@ -57,67 +60,26 @@ export default function Login({navigation}) {
   
 
     return (
-        <View style={styles.container}>
+        <View style={stylesLogin.container}>
             <Text style={{fontSize: 30}}>Login</Text>
-            <View style={styles.geral}>
-                <TextInput placeholder="Email:" keyboardType="email-address" autoCapitalize="none" style={styles.inputs} value={email} onChangeText={setEmail}></TextInput>
-                <TextInput placeholder="Senha:" secureTextEntry style={styles.inputs} value={senha} onChangeText={setSenha}></TextInput>
+            <View style={stylesLogin.geral}>
+                <TextInput placeholder="Email:" keyboardType="email-address" autoCapitalize="none" style={stylesLogin.inputs} value={email} onChangeText={setEmail}></TextInput>
+                <TextInput placeholder="Senha:" secureTextEntry style={stylesLogin.inputs} value={senha} onChangeText={setSenha}></TextInput>
                 <TouchableOpacity onPress={() => navigation.navigate("Forgot")} style={{alignSelf: 'flex-end'}}>
                   <Text style={{opacity: 0.5}}>Esqueceu a senha?</Text>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.butao} onPress={() => fazerLogin()} disabled={carregando}>
+            <TouchableOpacity style={stylesLogin.butao} onPress={() => fazerLogin()} disabled={carregando}>
                 <Text style={{color: "white", alignSelf: "center", fontSize: 15}}>{carregando ? "Entrando..." : "Logar"}</Text>
             </TouchableOpacity>
-            <View style={styles.icones}>
-                <Image source={require("../../assets/google.png")} style={styles.icone}/>
-                <Image source={require("../../assets/face.png")} style={styles.icone}/>
-                <Image source={require("../../assets/twi.png")} style={styles.icone}/>
-                <Image source={require("../../assets/linke.png")} style={styles.icone}/>
+            <View style={stylesLogin.icones}>
+                <Image source={require("../../assets/google.png")} style={stylesLogin.icone}/>
+                <Image source={require("../../assets/face.png")} style={stylesLogin.icone}/>
+                <Image source={require("../../assets/twi.png")} style={stylesLogin.icone}/>
+                <Image source={require("../../assets/linke.png")} style={stylesLogin.icone}/>
             </View>
         </View>
 
         
     )    
 }
-
-const styles = StyleSheet.create({
-    container:  {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 30
-    },
-    butao: {
-        backgroundColor: "black",
-        padding: 10,
-        borderRadius: 15,
-        width: 200
-      },
-      geral: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: 20
-      },
-      inputs: {
-        height: 40,
-        margin: 5,
-        borderWidth: 1,
-        padding: 10,
-        width: 300,
-        borderRadius: 12
-      },
-      icones: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        gap: 20
-      },
-      icone: {
-        width: 54,
-        height: 54,       
-      }
-})
