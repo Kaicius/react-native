@@ -11,7 +11,7 @@ export default function Home() {
       <Image source={require("../../assets/icon.png")} style={{width: 64, height: 64}}/>
       <Text style={stylesHome.textPrimary}>Site</Text>
       <View style={stylesHome.geral}>
-        <TouchableOpacity  onPress={() => navigation.navigate("DetailsModal")} style={stylesHome.btnPrimary}>
+        <TouchableOpacity  onPress={() => navigation.navigate("Register")} style={stylesHome.btnPrimary}>
             <Text style={{color: "white", fontSize: 15}}>
             Cadastro
             </Text>

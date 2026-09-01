@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home, Logado, Login, Register, Forgot } from './src/screens';
-import DetailsModal from './src/components/modal';
+import { Home, Logado, Login, Register, Forgot } from '@screens/';
+import DetailsModal from '@components/modal';
 
 const Stack = createNativeStackNavigator();
 

@@ -17,10 +17,10 @@ const Container = styled.View`
     gap: 30px;
 `
 const Button = styled.TouchableOpacity`
-    background-color: "red";
     padding: 10px;
     border-radius: 15px;
     width: 200px;
+    background-color: black
 `
 
 export { Container, Input, Button }
