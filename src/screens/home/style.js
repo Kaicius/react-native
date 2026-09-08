@@ -21,6 +21,11 @@ export const stylesHome = StyleSheet.create({
       padding: 12,
       borderRadius: 20
     },
+    btnTertiary: {
+      backgroundColor: "yellow",
+      padding: 12,
+      borderRadius: 20
+    },
     geral: {
       display: "flex",
       alignItems: "center",

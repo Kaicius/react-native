@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Home, Logado, Login, Register, Forgot } from '@screens/';
 import DetailsModal from '@components/modal';
+import AlertBanner from '@components/banner';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,10 @@ export default function App() {
 
         <Stack.Group screenOptions={{ presentation: "modal", animation: "slide_from_bottom" }}>
           <Stack.Screen name='DetailsModal' component={DetailsModal} options={{headerShown: false}}/>
+        </Stack.Group>
+
+        <Stack.Group>
+          <Stack.Screen name='AlertBanner' component={AlertBanner} options={{headerShown: false}}/>
         </Stack.Group>
 
       </Stack.Navigator>
