@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Pressable, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import { stylesHome } from './style';
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,6 +19,11 @@ export default function Home() {
         <TouchableOpacity  onPress={() => navigation.navigate("Login")} style={stylesHome.btnSecondary}>
           <Text style={{color: "white", fontSize: 15}}>
             Login
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("AlertBanner")} style={stylesHome.btnTertiary}>
+          <Text style={{color: "black", fontSize: 15}}>
+            Banner 
           </Text>
         </TouchableOpacity>
       </View>
