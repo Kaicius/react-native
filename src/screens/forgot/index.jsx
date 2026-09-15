@@ -12,7 +12,7 @@ const Forgot = () => {
             <Button onPress={() => navigation.navigate("DetailsModal", {type:"success", title:"Feito", description:"senha alterada com sucesso"})}>
                 <Text style={{color: "white", alignSelf: "center", fontSize: 15}}>Confirmar</Text>
             </Button>
-            <AlertBanner />
+            <AlertBanner type={"success"}/>
         </Container>
     )
 }

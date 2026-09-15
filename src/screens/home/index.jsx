@@ -21,11 +21,6 @@ export default function Home() {
             Login
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity  onPress={() => navigation.navigate("AlertBanner")} style={stylesHome.btnTertiary}>
-          <Text style={{color: "black", fontSize: 15}}>
-            Banner 
-          </Text>
-        </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
     </View>

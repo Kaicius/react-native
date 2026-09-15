@@ -1,29 +1,36 @@
 import * as AB from './style'
 
-const AlertBanner = () => {
-    const { type } = tpe    
+const AlertBanner = ({type, message, title}) => {   
 
-    function BannerType(type) {
+    const getBannerConfig = () => {
         switch (type) {
             case "danger":
-                return "../../assets/Danger.png"
+                return require("../../assets/Danger.png")
                 break;
             case "success":
-                return "../../assets/Success.png"
+                return {
+                    image: require("../../assets/Success.png"),
+                    color: "#147914",
+                    title: "This is a success",
+                    message: "This action was a success"
+                }
                 break;
             case "alert":
-                return "../../assets/Alert.png"
+                return require("../../assets/Alert.png")
                 break;
             
             default:
-                return "../../assets/Info.png"
+                return require("../../assets/Info.png")
                 break;
         }
     }
+    
     return (
-        <AB.Container>
-            <AB.banner source={BannerType()} />
-        </AB.Container>
+        <AB.Container3>
+            <AB.BannerTitle>{getBannerConfig().title}</AB.BannerTitle>
+            <AB.banner source={getBannerConfig().image} />
+            <AB.BannerMsg>{getBannerConfig().message}</AB.BannerMsg>
+        </AB.Container3>
     )
 }
 

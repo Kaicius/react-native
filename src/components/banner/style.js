@@ -31,6 +31,15 @@ const banner = styled.Image`
     width: 350px;
     height: 350px;
     object-fit: contain;
+    position: absolute;
+    left: -170px;
+    top: -590px;
+    
+    shadow-color: #000;
+    shadow-offset: 0px -1px;
+    shadow-opacity: 0.1;
+    shadow-radius: 3px;
+
 `
 
 const Title = styled.Text`
@@ -67,4 +76,26 @@ const Butons = styled.TouchableOpacity`
     border-radius: 20px;
 `
 
-export { Container, Title, Description, CloseBtn, Overlay, IconCircle, Butons, Btext, Container2, banner }
+const Container3 = styled.View`
+
+`
+
+const BannerMsg = styled.Text`
+    font-size: 12px;
+    position: absolute;
+    top: -413px;
+    left: -137px;
+    font-weight: 300;
+`
+
+const BannerTitle = styled.Text`
+    font-size: 12px;
+    position: absolute;
+    left: -137px;
+    top: -435px;
+    font-weight: 700;
+    color: #147914;
+    z-index: 1;
+`
+
+export { Container, Container3, Title,  BannerTitle, Description, BannerMsg ,CloseBtn, Overlay, IconCircle, Butons, Btext, Container2, banner }
